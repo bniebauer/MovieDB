@@ -5,9 +5,9 @@ import "./App.css";
 import Movies from "./components/movies";
 import FakeRoute from "./components/testComponents/fakeRoute";
 import NotFound from "./components/testComponents/notfound";
-import MovieDetail from "./components/movieDetail";
 import LoginPage from "./components/login";
 import RegisterForm from "./components/register";
+import MovieForm from "./components/movieForm";
 
 class App extends Component {
   render() {
@@ -16,9 +16,10 @@ class App extends Component {
         <Navbar />
         <main className="container">
           <Switch>
+            <Route path="/movieform" component={MovieForm} />
             <Route
               path="/movies/:id"
-              render={props => <MovieDetail {...props} />}
+              render={props => <MovieForm {...props} />}
             />
             <Route path="/movies" render={props => <Movies {...props} />} />
             <Route path="/customers" component={FakeRoute} />

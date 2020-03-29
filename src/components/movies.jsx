@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import ListGroup from "./common/listgroup";
@@ -83,6 +84,9 @@ class Movies extends Component {
           />
         </div>
         <div className="col">
+          <Link to="/movieform">
+            <button className="btn btn-primary">New Movie</button>
+          </Link>
           <p>
             Showing {length} {length > 1 ? "Movies" : "Movie"} in the database.
           </p>
